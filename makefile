@@ -1,35 +1,43 @@
 CXX      := g++
 AR       := ar
-RANLIB   := ranlib
+ranlib   := ranlib
 CXXFLAGS := -std=c++17 -Wall -Wextra -Iinclude
+LDFLAGS  := -Llib -lftpp
 
-SRCDIR   := source
+SRCDIR   := src
 OBJDIR   := obj
 LIBDIR   := lib
 INCDIR   := include
+TESTDIR  := tests
+BINDIR   := bin
 
 SRC      := $(wildcard $(SRCDIR)/*.cpp)
 OBJ      := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
-TARGET   := $(LIBDIR)/libftpp.a
+LIB      := $(LIBDIR)/libftpp.a
 
-.PHONY: all clean install
+TESTS    := $(wildcard $(TESTDIR)/*.cpp)
+TESTBINS := $(patsubst $(TESTDIR)/%.cpp,$(BINDIR)/%,$(TESTS))
 
-all: $(TARGET)
+.PHONY: all lib tests clean
 
-$(TARGET): $(OBJ)
+all: lib tests
+
+lib: $(LIB)
+
+$(LIB): $(OBJ)
 	@mkdir -p $(LIBDIR)
 	$(AR) rcs $@ $^
-	$(RANLIB) $@
+	$(ranlib) $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:
-	rm -rf $(OBJDIR) $(LIBDIR)
+tests: $(TESTBINS)
 
-install: all
-	install -d /usr/local/lib
-	install -m 644 $(TARGET) /usr/local/lib/
-	install -d /usr/local/include/libftpp
-	cp -a $(INCDIR)/*.hpp /usr/local/include/libftpp/
+$(BINDIR)/%: $(TESTDIR)/%.cpp lib
+	@mkdir -p $(BINDIR)
+	$(CXX) $(CXXFLAGS) $< $(LDFLAGS) -o $@
+
+clean:
+	rm -rf $(OBJDIR) $(LIBDIR) $(BINDIR)

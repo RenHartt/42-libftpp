@@ -65,7 +65,6 @@ public:
         capacity   = newCap;
     }
 
-
     template<typename... TArgs>
     Object acquire(TArgs&&... args) {
         std::size_t i = 0;
@@ -85,7 +84,6 @@ public:
 
         return Object(this, i, ptr);
 }
-
 
 private:
     void*       buffer;
@@ -110,7 +108,6 @@ public:
     }
 
     TType* operator->() { return ptr; }
-    TType& operator*() { return *ptr; }
 
 private:
     friend Pool;
