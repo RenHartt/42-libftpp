@@ -1,0 +1,114 @@
+[
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_data_buffer",
+      "tests/main_data_buffer.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_data_buffer.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_data_buffer"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_memento",
+      "tests/main_memento.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_memento.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_memento"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_observer",
+      "tests/main_observer.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_observer.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_observer"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_pool",
+      "tests/main_pool.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_pool.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_pool"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_singleton",
+      "tests/main_singleton.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_singleton.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_singleton"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_state_machine",
+      "tests/main_state_machine.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_state_machine.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_state_machine"
+  },
+  {
+    "arguments": [
+      "/nix/store/mpm3i0sbqc9svfch6a17179fs64dz2kv-gcc-wrapper-13.3.0/bin/g++",
+      "-c",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-o",
+      "bin/main_thread_safe_iostream",
+      "tests/main_thread_safe_iostream.cpp"
+    ],
+    "directory": "/home/bgoron/42-libftpp",
+    "file": "/home/bgoron/42-libftpp/tests/main_thread_safe_iostream.cpp",
+    "output": "/home/bgoron/42-libftpp/bin/main_thread_safe_iostream"
+  }
+]

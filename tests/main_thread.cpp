@@ -16,13 +16,12 @@ void myFunction2() {
 }
 
 int main() {
-    Thread thread1("Thread1", myFunction1);
-    Thread thread2("Thread2", myFunction2);
+    Thread thread1("Thread1 ", myFunction1);
+    Thread thread2("Thread2 ", myFunction2);
 
     thread1.start();
     thread2.start();
 
-    thread1.stop();
     thread2.stop();
 
     return 0;
