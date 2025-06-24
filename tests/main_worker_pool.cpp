@@ -9,7 +9,7 @@ int main() {
         threadSafeCout << "Executing job on thread: " << std::this_thread::get_id() << std::endl;
     };
 
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 5; ++i) {
         pool.addJob(job);
     }
 

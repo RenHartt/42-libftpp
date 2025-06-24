@@ -35,8 +35,8 @@ public:
 
         uint64_t len = s.size();
         append(&len, sizeof(len));
-
         append(s.data(), s.size());
+    
         return *this;
     }
 
@@ -51,6 +51,7 @@ public:
 
         std::istringstream iss(s);
         iss >> obj;
+        
         return *this;
     }
 
