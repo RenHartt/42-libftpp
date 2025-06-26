@@ -1,6 +1,8 @@
 #include "server.hpp"
 #include "thread_safe_iostream.hpp"
 #include <string>
+#include "network.hpp"
+#include <algorithm>
 
 int main() {
     Server server;
@@ -12,7 +14,7 @@ int main() {
         threadSafeCout << "Received an int " << value << " from client " << clientID << std::endl;
 
         // Send back a message of type 3 with double the value
-        Message replyMsg;
+        Message replyMsg(3);
         replyMsg << (value * 2);
         server.sendTo(replyMsg, clientID);
     });

@@ -1,8 +1,10 @@
 #include "client.hpp"
 #include "thread_safe_iostream.hpp"
 #include <string>
+#include <algorithm>
 
 int main() {
+    try {
     Client client;
 
 	client.defineAction(3, [](const Message& msg){
@@ -52,6 +54,7 @@ int main() {
 
     // Disconnect from the server
     client.disconnect();
+    } catch (...) {}
 
     return 0;
 }
