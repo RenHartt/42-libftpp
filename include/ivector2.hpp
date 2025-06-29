@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include <stdexcept>
 
 template<typename TType>
 struct IVector2 {
@@ -44,8 +45,8 @@ struct IVector2 {
         return this->x * other.x + this->y * other.y;
     }
 
-    IVector2<TType> cross(void) {
-        return { -this->y, this->x };
+    IVector2<TType> cross(void) const {
+        throw std::logic_error("https://en.wikipedia.org/wiki/Cross_product");
     }
 
 };

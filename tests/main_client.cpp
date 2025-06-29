@@ -36,20 +36,20 @@ int main() {
 	{
 		client.update();
 
-		threadSafeCout << "Client updated." << std::endl;
-		threadSafeCout << "Available operations :" << std::endl;
-		threadSafeCout << " - [Q]uit : close the program" << std::endl;
-		threadSafeCout << " - Any other input to continue updating the client" << std::endl;
+		// threadSafeCout << "Client updated." << std::endl;
+		// threadSafeCout << "Available operations :" << std::endl;
+		// threadSafeCout << " - [Q]uit : close the program" << std::endl;
+		// threadSafeCout << " - Any other input to continue updating the client" << std::endl;
 
-		std::string input;
-		std::getline(std::cin, input);
+		// std::string input;
+		// std::getline(std::cin, input);
 
-		std::transform(input.begin(), input.end(), input.begin(), 
-		               [](unsigned char c){ return std::tolower(c); });
+		// std::transform(input.begin(), input.end(), input.begin(), 
+		//                [](unsigned char c){ return std::tolower(c); });
 
-		if (input == "quit" || (input.length() == 1 && input[0] == 'q')) {
-		    quit = true;
-		}
+		// if (input == "quit" || (input.length() == 1 && input[0] == 'q')) {
+		//     quit = true;
+		// }
 	}
 
     // Disconnect from the server

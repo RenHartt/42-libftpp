@@ -64,21 +64,27 @@ public:
 
     void send(const Message& message) {
         std::lock_guard<std::mutex> lock(mutex);
-        
+
         std::vector<uint8_t> frame = message.raw();
         const uint8_t* ptr = frame.data();
-        std::size_t toSend = frame.size();
+        std::size_t   left = frame.size();
 
-        while (toSend) {
-            ssize_t sent = ::send(sockfd, ptr, toSend, 0);
+        while (left > 0) {
+            ssize_t sent = ::send(sockfd, ptr, left, 0);
             if (sent < 0) {
-                throw std::runtime_error("Client::send() failed");
+                if (errno == EINTR) {
+                    continue;
+                }
+                if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                    throw std::runtime_error("Client::send() would block");
+                }
+                throw std::runtime_error(std::string{"Client::send() failed: "} + std::strerror(errno));
             }
-
-            ptr += sent;
-            toSend -= sent;
+            ptr  += sent;
+            left -= sent;
         }
     }
+
 
     void update(void) {
         std::lock_guard<std::mutex> lock(mutex);

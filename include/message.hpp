@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data_buffer.hpp"
+#include <cstddef>
 
 class Message {
 public:

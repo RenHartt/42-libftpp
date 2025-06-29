@@ -5,7 +5,7 @@
 int main() {
     PerlinNoise2D perlin;
 
-    const int gridSize = 10;
+    const int gridSize = 100;
     char visualChars[] = {' ', '.', ':', '-', '=', '+', '*', '#', '%', '@'};
 
     std::cout << "Sampling 2D Perlin noise over a " << gridSize << "x" << gridSize << " grid:" << std::endl << std::endl;

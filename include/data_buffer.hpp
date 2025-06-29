@@ -60,7 +60,7 @@ public:
     void resetReadPos(void) const { pos = 0; }
     void clear(void) { buffer.clear();  pos = 0; }
 
-     void insert(const uint8_t* src, std::size_t len) {
+    void insert(const uint8_t* src, std::size_t len) {
         buffer.insert(buffer.end(), src, src + len);
     }
 };
